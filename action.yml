@@ -19,10 +19,10 @@ runs:
   steps:
     - name: "Verify consumer"
       id: consumer
-      run: env API_TOKEN=${{ inputs.apiToken }} API_URL=${{ inputs.apiUrl }} JSON_IN='${{ inputs.jsonIn }}' JSON_OUT='${{ inputs.jsonOut }}' npm run pact:consumer
+      run: env API_TOKEN=${{ inputs.apiToken }} API_URL=${{ inputs.apiUrl }} JSON_IN='${{ inputs.jsonIn }}' JSON_OUT='${{ inputs.jsonOut }}' && npm run pact:consumer
       shell: bash
 
     - name: "Verify provider"
       id: provider
-      run: env API_TOKEN=${{ inputs.apiToken }} API_URL=${{ inputs.apiUrl }} npm run pact:provider
+      run: env API_TOKEN=${{ inputs.apiToken }} API_URL=${{ inputs.apiUrl }} && npm run pact:provider
       shell: bash
