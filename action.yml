@@ -1,0 +1,28 @@
+name: 'pact test'
+description: 'pact test'
+author: 'TheoTonneau'
+inputs:
+  apiUrl:
+    required: true
+    description: "url of the API"
+  apiToken:
+    required: true
+    description: "token to access the API"
+  jsonIn:
+    required: true
+    description: "input json"
+  jsonOut:
+    required: true
+    description: "expected output json"
+runs:
+  using: "composite"
+  steps:
+    - name: "Verify consumer"
+      id: consumer
+      run: env API_TOKEN=${{ inputs.apiToken }} API_URL=${{ inputs.apiUrl }} JSON_IN=${{ inputs.jsonIn }} JSON_OUT=${{ inputs.jsonOut }} npm run pact:consumer
+      shell: bash
+
+    - name: "Verify provider"
+      id: consumer
+      run: env API_TOKEN=${{ inputs.apiToken }} API_URL=${{ inputs.apiUrl }} npm run pact:provider
+      shell: bash

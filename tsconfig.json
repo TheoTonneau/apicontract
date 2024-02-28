@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "ES2020",
+    "target": "ES2021",
+    "strict": true,
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "outDir": "./built",
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@app/*": ["lambda/src/*"]
+    }
+  },
+  "include": ["jest.config.ts", "lambda/**/*.ts"],
+  "exclude": ["node_modules", "node_modules"]
+}
