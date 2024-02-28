@@ -23,6 +23,6 @@ runs:
       shell: bash
 
     - name: "Verify provider"
-      id: consumer
+      id: provider
       run: env API_TOKEN=${{ inputs.apiToken }} API_URL=${{ inputs.apiUrl }} npm run pact:provider
       shell: bash
