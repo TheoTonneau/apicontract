@@ -3,6 +3,17 @@
 A utiliser dans votre workflow
 
 ```     
+- name: Setup Node
+  uses: actions/setup-node@v3
+  with:
+    node-version: ${{ env.NODE_VERSION }}
+    
+- name: "Node"
+  run: |
+    npm ci
+    npm install
+  shell: bash
+      
 - name: "Get json"
   id: json
   run: |
@@ -11,7 +22,7 @@ A utiliser dans votre workflow
   shell: bash 
   
 - name: "Run pacts check"
-  uses: TheoTonneau/apicontract@v1.1.3
+  uses: TheoTonneau/apicontract@v2
   with:
     apiUrl: "https://url-de-votre-api.com"
     apiToken: ${{ secrets.TOKEN-DE-VOTRE-API }}
