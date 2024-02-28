@@ -22,7 +22,7 @@ A utiliser dans votre workflow
   shell: bash 
   
 - name: "Run pacts check"
-  uses: TheoTonneau/apicontract@v2
+  uses: TheoTonneau/apicontract@v2.1
   with:
     apiUrl: "https://url-de-votre-api.com"
     apiToken: ${{ secrets.TOKEN-DE-VOTRE-API }}
