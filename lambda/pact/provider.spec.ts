@@ -8,7 +8,6 @@ import path from "path";
 const token = process.env.API_TOKEN;
 const api_URL = process.env.API_URL;
 
-
 // Get path
 const pactUrls = [path.resolve("pact/pacts")];
 
