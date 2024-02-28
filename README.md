@@ -12,4 +12,6 @@ A utiliser dans votre workflow
     jsonOut: '${cat pact/ExpectedResponse.json}' 
 ```
 
+⚠️ L'ordre des variables dans le json de sortie peut-être différent de celui d'entrée
+
 [Documentation sur les tests de contrats](https://pact.io/consumer)
