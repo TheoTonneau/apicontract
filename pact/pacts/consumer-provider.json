@@ -1,0 +1,154 @@
+{
+  "consumer": {
+    "name": "consumer"
+  },
+  "interactions": [
+    {
+      "description": "POST https://isc7z5w1ph.execute-api.eu-central-1.amazonaws.com/v1",
+      "providerState": "in",
+      "request": {
+        "body": {
+          "emailListCopy": [
+            "email@de.test"
+          ],
+          "intervention": {
+            "company": "SRD",
+            "description": "Il y a un problème",
+            "elementIntervention": "L'éolienne",
+            "location": "TEST",
+            "machineIsStopped": false,
+            "name1": "NOM Test",
+            "name2": "Nom Test1",
+            "nameList": [
+              "Nom Test2"
+            ],
+            "phone": "0123456789",
+            "startDate": "15/02/2024 15:06:37",
+            "typeIntervention": "Other"
+          },
+          "intervention_type": "in"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/intervention/email"
+      },
+      "response": {
+        "body": {
+          "bcc": [
+            {
+              "email": "email@de.test"
+            }
+          ],
+          "params": {
+            "company": "SRD",
+            "description": "Il y a un problème",
+            "elementIntervention": "L'éolienne",
+            "location": "TEST",
+            "machineIsStopped": false,
+            "name1": "NOM Test",
+            "name2": "Nom Test1",
+            "nameList": [
+              "Nom Test2"
+            ],
+            "phone": "0123456789",
+            "startDate": "15/02/2024 15:06:37",
+            "typeIntervention": "Other"
+          },
+          "sender": {
+            "email": "no-reply@info.srd.fr",
+            "name": "Intervention Machine"
+          },
+          "subject": "IN_TEST_SRD",
+          "tags": [
+            "qrcode"
+          ],
+          "templateId": 30,
+          "to": [
+            {
+              "email": "/si-srd/test/qr-code/intervention/mail"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "POST https://isc7z5w1ph.execute-api.eu-central-1.amazonaws.com/v1",
+      "providerState": "out",
+      "request": {
+        "body": {
+          "emailListCopy": [
+            "email@de.test"
+          ],
+          "intervention": {
+            "comment": "Fin de l'intervention",
+            "endDate": "15/02/2024 15:08:28",
+            "equipmentState": "true",
+            "isInterventionEnd": true,
+            "location": "TEST"
+          },
+          "intervention_type": "out"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/intervention/email"
+      },
+      "response": {
+        "body": {
+          "bcc": [
+            {
+              "email": "email@de.test"
+            }
+          ],
+          "params": {
+            "comment": "Fin de l'intervention",
+            "endDate": "15/02/2024 15:08:28",
+            "equipmentState": "true",
+            "isInterventionEnd": true,
+            "location": "TEST"
+          },
+          "sender": {
+            "email": "no-reply@info.srd.fr",
+            "name": "Intervention Machine"
+          },
+          "subject": "OUT_TEST_RUN",
+          "tags": [
+            "qrcode"
+          ],
+          "templateId": 32,
+          "to": [
+            {
+              "email": "/si-srd/test/qr-code/intervention/mail"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "12.2.0"
+    },
+    "pactRust": {
+      "ffi": "0.4.16",
+      "models": "1.1.19"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "provider"
+  }
+}
